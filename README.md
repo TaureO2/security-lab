@@ -4,6 +4,13 @@ Repositorio central de un ecosistema de herramientas de ciberseguridad con enfoq
 
 Este repositorio no contiene herramientas. Contiene lo que las une: el plan, la arquitectura, el formato común de datos y la documentación del laboratorio.
 
+## Qué hay aquí
+
+| Archivo | Contenido |
+| --- | --- |
+| [ROADMAP.md](ROADMAP.md) | Qué se va a construir y en qué orden |
+| [ARCHITECTURE.md](ARCHITECTURE.md) | Cómo encajan las herramientas y por qué está organizado así |
+
 ## El ecosistema
 
 | Repositorio | Área | Estado |
