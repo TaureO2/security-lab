@@ -4,14 +4,26 @@
 
 Las herramientas del ecosistema se conectan a través de un **formato común de hallazgos** en JSON. Cada herramienta lee una fuente de datos y produce hallazgos con el mismo esquema, de modo que otra herramienta (un SIEM, un informe o el validador) puede consumirlos sin adaptaciones.
 
-```mermaid
-flowchart TD
-    A[" 1. Fuentes de datos "] --> B[" 2. Analizadores "]
-    B --> C[" 3. Esquema común "]
-    C --> D[" 4. Detección "]
-    D --> E[" 5. Validación "]
-    R[" Atacante del laboratorio "] -. genera datos .-> A
-    E -. ¿se detectó? .-> R
+```text
+┌──────────────────────┐
+│ 1. Fuentes de datos  │◄─────────────┐
+└───────────┬──────────┘              │ genera datos
+            ▼               ┌─────────┴────────────────┐
+┌──────────────────────┐    │ Atacante del laboratorio │
+│ 2. Analizadores      │    └─────────▲────────────────┘
+└───────────┬──────────┘              │
+            ▼                         │
+┌──────────────────────┐              │
+│ 3. Esquema común     │              │
+└───────────┬──────────┘              │
+            ▼                         │ ¿se detectó?
+┌──────────────────────┐              │
+│ 4. Detección         │              │
+└───────────┬──────────┘              │
+            ▼                         │
+┌──────────────────────┐              │
+│ 5. Validación        ├──────────────┘
+└──────────────────────┘
 ```
 
 | Capa | Contenido |
