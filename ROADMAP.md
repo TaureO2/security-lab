@@ -1,6 +1,6 @@
 # Roadmap
 
-Plan hasta junio de 2027, con unas 6-7 horas de trabajo semanales. Se revisa cada mes: si cambian las prioridades o el mercado laboral, se ajusta aquí.
+Plan hasta junio de 2027, con unas 6-7 horas de trabajo semanales. Se revisa cada mes y los cambios se reflejan aquí.
 
 ## Etapas
 
