@@ -6,13 +6,22 @@ Las herramientas del ecosistema se conectan a través de un **formato común de 
 
 ```mermaid
 flowchart TD
-    A["Fuentes de datos<br/>logs de Linux y Windows, correos, Active Directory"] --> B["Analizadores y auditores<br/>authwatch · phish-triage · ad-hygiene"]
-    B --> C["Esquema común o2.finding"]
-    C --> D["Detección<br/>reglas Sigma · SIEM Wazuh"]
-    D --> E["Validación e informes<br/>purple-validator"]
-    R["Máquina atacante del laboratorio<br/>técnicas simuladas"] -. genera datos .-> A
+    A[" 1. Fuentes de datos "] --> B[" 2. Analizadores "]
+    B --> C[" 3. Esquema común "]
+    C --> D[" 4. Detección "]
+    D --> E[" 5. Validación "]
+    R[" Atacante del laboratorio "] -. genera datos .-> A
     E -. ¿se detectó? .-> R
 ```
+
+| Capa | Contenido |
+| --- | --- |
+| 1. Fuentes de datos | Logs de Linux y Windows, correos, Active Directory |
+| 2. Analizadores | authwatch, phish-triage, ad-hygiene |
+| 3. Esquema común | Hallazgos en JSON con el formato `o2.finding` |
+| 4. Detección | Reglas Sigma y el SIEM Wazuh del laboratorio |
+| 5. Validación | purple-validator: qué ataques se detectaron y cuáles no |
+| Atacante del laboratorio | Máquina Kali que simula técnicas de MITRE ATT&CK |
 
 El bucle de la derecha es la parte Purple Team: se simula una técnica de ataque en el laboratorio, los datos que genera pasan por las herramientas, y el validador comprueba si alguna detección la vio.
 
