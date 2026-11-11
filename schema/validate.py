@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Comprueba que el esquema o2.finding acepta los ejemplos válidos y rechaza los inválidos.
+"""Check that the o2.finding schema accepts the valid examples and rejects the invalid ones.
 
-Uso: python3 schema/validate.py
-Sale con código 0 si todo es correcto y 1 si algún ejemplo no se comporta como se espera.
+Usage: python3 schema/validate.py
+Exits with code 0 if everything is correct and 1 if any example does not behave as expected.
 """
 
 import json
@@ -30,19 +30,19 @@ def main() -> int:
         errors = list(validator.iter_errors(load(path)))
         if errors:
             failures += 1
-            print(f"FALLO  {path.name}: debería ser válido")
+            print(f"FAIL   {path.name}: should be valid")
             for error in errors:
                 print(f"       - {error.message}")
         else:
-            print(f"OK     {path.name}: válido")
+            print(f"OK     {path.name}: valid")
 
     for path in sorted((SCHEMA_DIR / "examples" / "invalid").glob("*.json")):
         errors = list(validator.iter_errors(load(path)))
         if errors:
-            print(f"OK     {path.name}: rechazado ({errors[0].message})")
+            print(f"OK     {path.name}: rejected ({errors[0].message})")
         else:
             failures += 1
-            print(f"FALLO  {path.name}: debería ser rechazado")
+            print(f"FAIL   {path.name}: should be rejected")
 
     return 1 if failures else 0
 

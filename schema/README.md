@@ -1,28 +1,28 @@
-# Esquema común `o2.finding`
+# Common schema `o2.finding`
 
-Formato JSON que usan todas las herramientas del ecosistema para describir un hallazgo de seguridad. Así, lo que produce una herramienta lo puede leer otra, un SIEM o un informe.
+The JSON format that all the tools in the ecosystem use to describe a security finding. This way, what one tool produces can be read by another tool, a SIEM or a report.
 
-Versión actual: **v0** ([`o2-finding.v0.schema.json`](o2-finding.v0.schema.json)), en formato JSON Schema 2020-12.
+Current version: **v0** ([`o2-finding.v0.schema.json`](o2-finding.v0.schema.json)), in JSON Schema 2020-12 format.
 
-## Campos
+## Fields
 
-| Campo | Obligatorio | Descripción |
+| Field | Required | Description |
 | --- | --- | --- |
-| `schema` | Sí | Siempre `"o2.finding/v0"` |
-| `tool` | Sí | Herramienta que genera el hallazgo, en minúsculas (`authwatch`) |
-| `timestamp` | Sí | Momento del evento, en RFC 3339 (`2026-11-20T10:42:13Z`) |
-| `severity` | Sí | `info`, `low`, `medium`, `high` o `critical` |
-| `title` | Sí | Resumen legible, hasta 200 caracteres |
-| `id` | No | Identificador del hallazgo dentro de la ejecución |
-| `tool_version` | No | Versión de la herramienta (semver) |
-| `host` | No | Equipo donde ocurrió el evento |
-| `attack` | No | Técnicas de MITRE ATT&CK (`T1110`, `T1110.001`) |
-| `evidence` | No | Datos que justifican el hallazgo; libre para cada herramienta |
-| `recommendation` | No | Acción sugerida para el analista |
+| `schema` | Yes | Always `"o2.finding/v0"` |
+| `tool` | Yes | Tool that creates the finding, in lower case (`authwatch`) |
+| `timestamp` | Yes | Time of the event, in RFC 3339 (`2026-11-20T10:42:13Z`) |
+| `severity` | Yes | `info`, `low`, `medium`, `high` or `critical` |
+| `title` | Yes | Short readable summary, up to 200 characters |
+| `id` | No | Identifier of the finding within one run of the tool |
+| `tool_version` | No | Version of the tool (semver) |
+| `host` | No | Machine where the event happened |
+| `attack` | No | MITRE ATT&CK techniques (`T1110`, `T1110.001`) |
+| `evidence` | No | Data that supports the finding; free for each tool |
+| `recommendation` | No | Suggested action for the analyst |
 
-No se admiten campos fuera de esta lista. Lo específico de cada herramienta va dentro de `evidence`.
+Fields that are not in this list are not allowed. Tool-specific data goes inside `evidence`.
 
-## Ejemplo
+## Example
 
 ```json
 {
@@ -31,24 +31,24 @@ No se admiten campos fuera de esta lista. Lo específico de cada herramienta va 
   "timestamp": "2026-11-20T10:42:13Z",
   "host": "hosp-lnx-01",
   "severity": "high",
-  "title": "Posible fuerza bruta SSH",
+  "title": "Possible SSH brute force",
   "attack": ["T1110.001"],
   "evidence": { "source_ip": "203.0.113.45", "failures": 37, "window_minutes": 5 },
-  "recommendation": "Bloquear la IP y revisar si hubo un acceso correcto posterior desde ella."
+  "recommendation": "Block the IP address and check whether there was a successful login from it later."
 }
 ```
 
-Más ejemplos en [`examples/valid/`](examples/valid/). En [`examples/invalid/`](examples/invalid/) hay casos que el esquema debe rechazar.
+More examples in [`examples/valid/`](examples/valid/). [`examples/invalid/`](examples/invalid/) has cases that the schema must reject.
 
-## Validación
+## Validation
 
 ```bash
 pip install jsonschema
 python3 schema/validate.py
 ```
 
-La validación se ejecuta también en GitHub Actions con cada cambio.
+The validation also runs on GitHub Actions with every change.
 
-## Versionado
+## Versions
 
-Una versión publicada no cambia. Si hace falta un cambio incompatible (quitar un campo, cambiar un tipo), se crea `v1` en un archivo nuevo y las herramientas migran a su ritmo.
+A published version does not change its rules. If an incompatible change is needed (removing a field, changing a type), a `v1` is created in a new file and the tools move to it at their own pace.

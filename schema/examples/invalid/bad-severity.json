@@ -3,5 +3,5 @@
   "tool": "authwatch",
   "timestamp": "2026-11-20T10:42:13Z",
   "severity": "urgent",
-  "title": "La gravedad no es uno de los valores permitidos"
+  "title": "The severity is not one of the allowed values"
 }

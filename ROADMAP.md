@@ -1,31 +1,31 @@
 # Roadmap
 
-Plan hasta junio de 2027, con unas 6-7 horas de trabajo semanales. Se revisa cada mes y los cambios se reflejan aquí.
+Plan until June 2027, with about 6-7 hours of work per week. It is reviewed every month and changes are recorded here.
 
-## Etapas
+## Stages
 
-| Etapa | Periodo | Entregables |
+| Stage | Period | Deliverables |
 | --- | --- | --- |
-| 1. Fundación | Noviembre 2026 | Perfil de GitHub, este repositorio, esquema común v0 |
-| 2. AuthWatch | Noviembre-diciembre 2026 | Analizador de logs de autenticación en Bash |
-| 3. phish-triage | Diciembre 2026-enero 2027 | Analizador de correos sospechosos en Python |
-| 4. Laboratorio | Febrero-marzo 2027 | SIEM, dominio de Active Directory, Windows, Linux y máquina atacante |
-| 5. ad-hygiene | Febrero-marzo 2027 | Auditor de cuentas de Active Directory en PowerShell |
-| 6. detections | Abril-mayo 2027 | Reglas Sigma con tests y mapeo a MITRE ATT&CK |
-| 7. Ejercicios Purple | Mayo-junio 2027 | Ataques simulados en el laboratorio y su detección, documentados |
-| 8. purple-validator | Desde junio 2027 | Validación automática de detecciones y cobertura ATT&CK |
+| 1. Foundation | November 2026 | GitHub profile, this repository, common schema v0 |
+| 2. AuthWatch | November-December 2026 | Authentication log analyser in Bash |
+| 3. phish-triage | December 2026-January 2027 | Suspicious email analyser in Python |
+| 4. Lab | February-March 2027 | SIEM, Active Directory domain, Windows, Linux and attacker machine |
+| 5. ad-hygiene | February-March 2027 | Active Directory account auditor in PowerShell |
+| 6. detections | April-May 2027 | Sigma rules with tests and MITRE ATT&CK mapping |
+| 7. Purple exercises | May-June 2027 | Simulated attacks in the lab and their detection, documented |
+| 8. purple-validator | From June 2027 | Automatic detection validation and ATT&CK coverage |
 
-En paralelo, desde enero: **ctf-writeups**, 1-2 horas semanales de práctica ofensiva en plataformas legales.
+In parallel, from January: **ctf-writeups**, 1-2 hours a week of offensive practice on legal platforms.
 
-## Por qué este orden
+## Why this order
 
-1. **Bash primero:** es el lenguaje que ya conozco y da un primer resultado rápido.
-2. **Python después:** el análisis de correos sospechosos es la tarea más repetida en un SOC y conecta con mi experiencia en soporte técnico.
-3. **PowerShell con el laboratorio:** el auditor de Active Directory necesita un dominio donde probarse.
-4. **Detecciones y Purple Team al final:** necesitan el laboratorio, datos reales de ataques simulados y las herramientas anteriores.
+1. **Bash first:** it is the language I already know, and it gives a quick first result.
+2. **Python next:** analysing suspicious emails is one of the most common tasks in a SOC, and it connects with my experience in technical support.
+3. **PowerShell with the lab:** the Active Directory auditor needs a domain to test on.
+4. **Detections and Purple Team at the end:** they need the lab, real data from simulated attacks and the previous tools.
 
-## Hitos
+## Milestones
 
-- **Enero 2027:** perfil presentable con dos herramientas terminadas.
-- **Marzo 2027:** laboratorio operativo.
-- **Junio 2027:** 3-4 herramientas, reglas de detección propias y primeros ejercicios Purple Team documentados.
+- **January 2027:** a presentable profile with two finished tools.
+- **March 2027:** a working lab.
+- **June 2027:** 3-4 tools, my own detection rules and the first documented Purple Team exercises.

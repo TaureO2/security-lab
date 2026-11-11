@@ -1,36 +1,36 @@
 # security-lab
 
-Repositorio central de un ecosistema de herramientas de ciberseguridad con enfoque **Purple Team**: herramientas Blue Team que detectan ataques, y ataques Red Team en un laboratorio propio para comprobar si esas detecciones funcionan.
+Central repository of a cybersecurity tool ecosystem with a **Purple Team** approach: Blue Team tools that detect attacks, and Red Team attacks in my own lab to check that those detections work.
 
-Este repositorio no contiene herramientas. Contiene lo que las une: el plan, la arquitectura, el formato común de datos y la documentación del laboratorio.
+This repository does not contain tools. It contains what connects them: the plan, the architecture, the common data format and the lab documentation.
 
-## Qué hay aquí
+## What is here
 
-| Archivo | Contenido |
+| File | Content |
 | --- | --- |
-| [ROADMAP.md](ROADMAP.md) | Qué se va a construir y en qué orden |
-| [ARCHITECTURE.md](ARCHITECTURE.md) | Cómo encajan las herramientas y por qué está organizado así |
-| [schema/](schema/) | Esquema común de hallazgos `o2.finding` |
+| [ROADMAP.md](ROADMAP.md) | What will be built and in what order |
+| [ARCHITECTURE.md](ARCHITECTURE.md) | How the tools fit together and why it is organised this way |
+| [schema/](schema/) | Common findings schema `o2.finding` |
 
-## El ecosistema
+## The ecosystem
 
-| Repositorio | Área | Estado |
+| Repository | Area | Status |
 | --- | --- | --- |
-| security-lab | Organización y esquema común | Publicado |
-| authwatch | Blue Team · análisis de logs de Linux | En desarrollo |
-| phish-triage | Blue Team · triaje de correos sospechosos | Planificado |
-| ad-hygiene | Blue Team · auditoría de Active Directory | Planificado |
-| detections | Blue Team · reglas Sigma con tests | Planificado |
-| ctf-writeups | Red Team · retos legales documentados | Planificado |
-| purple-validator | Purple Team · validación de detecciones | Planificado |
+| security-lab | Organisation and common schema | Published |
+| authwatch | Blue Team · Linux log analysis | In development |
+| phish-triage | Blue Team · suspicious email triage | Planned |
+| ad-hygiene | Blue Team · Active Directory audit | Planned |
+| detections | Blue Team · Sigma rules with tests | Planned |
+| ctf-writeups | Red Team · documented legal challenges | Planned |
+| purple-validator | Purple Team · detection validation | Planned |
 
-## Principios
+## Principles
 
-- **Datos sintéticos siempre.** Los ejemplos simulan un hospital ficticio (`hosp.lab`). Nunca se usan datos reales.
-- **Ataques solo en entornos propios o autorizados:** el laboratorio local y plataformas legales de práctica.
-- **Un formato común.** Todas las herramientas producen hallazgos con el mismo esquema JSON, así cualquiera puede leer lo que genera otra.
-- **Calidad antes que cantidad.** Cada herramienta tiene tests, CI, documentación y limitaciones explícitas.
+- **Always synthetic data.** The examples simulate a fictional hospital (`hosp.lab`). Real data is never used.
+- **Attacks only in my own or authorised environments:** the local lab and legal practice platforms.
+- **One common format.** All the tools produce findings with the same JSON schema, so any tool can read what another one creates.
+- **Quality over quantity.** Each tool has tests, CI, documentation and clear limitations.
 
-## Licencia
+## Licence
 
 [MIT](LICENSE)

@@ -2,64 +2,79 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/TaureO2/security-lab/schema/o2-finding.v0.schema.json",
   "title": "o2.finding v0",
-  "description": "Hallazgo de seguridad producido por una herramienta del ecosistema security-lab.",
+  "description": "Security finding produced by a tool in the security-lab ecosystem.",
   "type": "object",
-  "required": ["schema", "tool", "timestamp", "severity", "title"],
+  "required": [
+    "schema",
+    "tool",
+    "timestamp",
+    "severity",
+    "title"
+  ],
   "additionalProperties": false,
   "properties": {
     "schema": {
-      "description": "Identificador y versión del esquema.",
+      "description": "Schema identifier and version.",
       "const": "o2.finding/v0"
     },
     "id": {
-      "description": "Identificador único del hallazgo dentro de la ejecución de la herramienta.",
+      "description": "Unique identifier of the finding within one run of the tool.",
       "type": "string",
       "minLength": 1,
       "maxLength": 128
     },
     "tool": {
-      "description": "Nombre de la herramienta que produce el hallazgo, en minúsculas.",
+      "description": "Name of the tool that produces the finding, in lower case.",
       "type": "string",
       "pattern": "^[a-z0-9][a-z0-9-]{0,63}$"
     },
     "tool_version": {
-      "description": "Versión de la herramienta (semver).",
+      "description": "Version of the tool (semver).",
       "type": "string",
       "pattern": "^\\d+\\.\\d+\\.\\d+([-+][0-9A-Za-z.-]+)?$"
     },
     "timestamp": {
-      "description": "Momento del evento que origina el hallazgo, en formato RFC 3339.",
+      "description": "Time of the event behind the finding, in RFC 3339 format.",
       "type": "string",
       "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[+-]\\d{2}:\\d{2})$"
     },
     "host": {
-      "description": "Equipo donde ocurrió el evento.",
+      "description": "Machine where the event happened.",
       "type": "string",
       "minLength": 1,
       "maxLength": 255
     },
     "severity": {
-      "description": "Gravedad estimada por la herramienta.",
-      "enum": ["info", "low", "medium", "high", "critical"]
+      "description": "Severity estimated by the tool.",
+      "enum": [
+        "info",
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
     },
     "title": {
-      "description": "Resumen legible del hallazgo.",
+      "description": "Short readable summary of the finding.",
       "type": "string",
       "minLength": 1,
       "maxLength": 200
     },
     "attack": {
-      "description": "Técnicas de MITRE ATT&CK relacionadas (por ejemplo T1110 o T1110.001).",
+      "description": "Related MITRE ATT&CK techniques (for example T1110 or T1110.001).",
       "type": "array",
-      "items": { "type": "string", "pattern": "^T\\d{4}(\\.\\d{3})?$" },
+      "items": {
+        "type": "string",
+        "pattern": "^T\\d{4}(\\.\\d{3})?$"
+      },
       "uniqueItems": true
     },
     "evidence": {
-      "description": "Datos que justifican el hallazgo. Su contenido depende de cada herramienta.",
+      "description": "Data that supports the finding. Its content depends on each tool.",
       "type": "object"
     },
     "recommendation": {
-      "description": "Acción sugerida para el analista.",
+      "description": "Suggested action for the analyst.",
       "type": "string",
       "maxLength": 1000
     }
