@@ -1,0 +1,18 @@
+{
+  "schema": "o2.finding/v0",
+  "id": "aw-0001",
+  "tool": "authwatch",
+  "tool_version": "0.1.0",
+  "timestamp": "2026-11-20T10:42:13Z",
+  "host": "hosp-lnx-01",
+  "severity": "high",
+  "title": "Posible fuerza bruta SSH",
+  "attack": ["T1110.001"],
+  "evidence": {
+    "source_ip": "203.0.113.45",
+    "failures": 37,
+    "window_minutes": 5,
+    "usernames": ["root", "admin", "enfermeria01"]
+  },
+  "recommendation": "Bloquear la IP y revisar si hubo un acceso correcto posterior desde ella."
+}

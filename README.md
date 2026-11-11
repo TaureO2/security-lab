@@ -10,6 +10,7 @@ Este repositorio no contiene herramientas. Contiene lo que las une: el plan, la 
 | --- | --- |
 | [ROADMAP.md](ROADMAP.md) | Qué se va a construir y en qué orden |
 | [ARCHITECTURE.md](ARCHITECTURE.md) | Cómo encajan las herramientas y por qué está organizado así |
+| [schema/](schema/) | Esquema común de hallazgos `o2.finding` |
 
 ## El ecosistema
 

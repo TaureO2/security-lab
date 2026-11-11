@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/TaureO2/security-lab/schema/o2-finding.v0.schema.json",
+  "title": "o2.finding v0",
+  "description": "Hallazgo de seguridad producido por una herramienta del ecosistema security-lab.",
+  "type": "object",
+  "required": ["schema", "tool", "timestamp", "severity", "title"],
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "description": "Identificador y versión del esquema.",
+      "const": "o2.finding/v0"
+    },
+    "id": {
+      "description": "Identificador único del hallazgo dentro de la ejecución de la herramienta.",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "tool": {
+      "description": "Nombre de la herramienta que produce el hallazgo, en minúsculas.",
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]{0,63}$"
+    },
+    "tool_version": {
+      "description": "Versión de la herramienta (semver).",
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+([-+][0-9A-Za-z.-]+)?$"
+    },
+    "timestamp": {
+      "description": "Momento del evento que origina el hallazgo, en formato RFC 3339.",
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[+-]\\d{2}:\\d{2})$"
+    },
+    "host": {
+      "description": "Equipo donde ocurrió el evento.",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+    },
+    "severity": {
+      "description": "Gravedad estimada por la herramienta.",
+      "enum": ["info", "low", "medium", "high", "critical"]
+    },
+    "title": {
+      "description": "Resumen legible del hallazgo.",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "attack": {
+      "description": "Técnicas de MITRE ATT&CK relacionadas (por ejemplo T1110 o T1110.001).",
+      "type": "array",
+      "items": { "type": "string", "pattern": "^T\\d{4}(\\.\\d{3})?$" },
+      "uniqueItems": true
+    },
+    "evidence": {
+      "description": "Datos que justifican el hallazgo. Su contenido depende de cada herramienta.",
+      "type": "object"
+    },
+    "recommendation": {
+      "description": "Acción sugerida para el analista.",
+      "type": "string",
+      "maxLength": 1000
+    }
+  }
+}

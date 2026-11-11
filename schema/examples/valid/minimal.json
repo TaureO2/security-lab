@@ -1,0 +1,7 @@
+{
+  "schema": "o2.finding/v0",
+  "tool": "authwatch",
+  "timestamp": "2026-11-20T08:15:00+01:00",
+  "severity": "info",
+  "title": "Nuevo usuario creado en el sistema"
+}
