@@ -3,13 +3,13 @@ __pycache__/
 *.pyc
 .venv/
 
-# Editores y sistema
+# Editors and operating system
 .vscode/
 .idea/
 .DS_Store
 Thumbs.db
 
-# Nunca subir secretos
+# Never upload secrets
 .env
 *.key
 *.pem
