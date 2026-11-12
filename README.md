@@ -11,6 +11,7 @@ This repository does not contain tools. It contains what connects them: the plan
 | [ROADMAP.md](ROADMAP.md) | What will be built and in what order |
 | [PROJECT_STATUS.md](PROJECT_STATUS.md) | Current status of each part |
 | [ARCHITECTURE.md](ARCHITECTURE.md) | How the tools fit together and why it is organised this way |
+| [LEARNING_PATH.md](LEARNING_PATH.md) | Knowledge practised and pending |
 | [schema/](schema/) | Common findings schema `o2.finding` |
 
 ## The ecosystem
