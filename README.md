@@ -13,6 +13,7 @@ This repository does not contain tools. It contains what connects them: the plan
 | [ARCHITECTURE.md](ARCHITECTURE.md) | How the tools fit together and why it is organised this way |
 | [LEARNING_PATH.md](LEARNING_PATH.md) | Knowledge practised and pending |
 | [schema/](schema/) | Common findings schema `o2.finding` |
+| [CHANGELOG.md](CHANGELOG.md) | Important changes |
 
 ## The ecosystem
 
