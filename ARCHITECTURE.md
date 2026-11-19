@@ -53,9 +53,9 @@ The loop on the right is the Purple Team part: an attack technique is simulated 
 - **Reason:** it makes it possible to chain tools, send findings to a SIEM and measure coverage in the same way.
 - **Accepted cost:** changing the schema means checking every tool. That is why it is versioned (`v0`, `v1`...) and a published version does not change.
 
-### 3. Synthetic data
+### 3. Example data
 
-- **Decision:** all examples and tests use invented data from a fictional hospital (`hosp.lab`, machines like `HOSP-WS-xxx`, documentation IP addresses like `203.0.113.0/24`).
+- **Decision:** examples and tests use made-up data (`hosp.lab`, machines like `HOSP-WS-xxx`, documentation IP addresses like `203.0.113.0/24`).
 - **Reason:** real data from any organisation is confidential. Documentation IP addresses (RFC 5737) belong to nobody.
 
 ### 4. Local lab

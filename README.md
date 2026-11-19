@@ -29,7 +29,6 @@ This repository does not contain tools. It contains what connects them: the plan
 
 ## Principles
 
-- **Always synthetic data.** The examples simulate a fictional hospital (`hosp.lab`). Real data is never used.
 - **Attacks only in my own or authorised environments:** the local lab and legal practice platforms.
 - **One common format.** All the tools produce findings with the same JSON schema, so any tool can read what another one creates.
 - **Quality over quantity.** Each tool has tests, CI, documentation and clear limitations.
